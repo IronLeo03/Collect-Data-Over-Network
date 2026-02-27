@@ -1,7 +1,7 @@
 #include "config.h"
 
 void enterDeepsleep() {
-
+  ESP.deepSleep(DEEPSLEEP_TIME);
 }
 
 void performRead() {

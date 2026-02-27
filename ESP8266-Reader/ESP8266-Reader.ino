@@ -9,7 +9,8 @@ void enterDeepsleep() {
 }
 
 void performRead() {
-  
+  int light = analogRead(PHOTORESISTOR_PIN);
+  doc["light"] = light;
 }
 
 void connectToNetwork() {

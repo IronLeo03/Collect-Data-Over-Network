@@ -2,4 +2,9 @@
 
 #define STASSID "SSID"
 #define STAPSK "password"
+#define ENDPOINT "endpoint_url"
+
 #define DEEPSLEEP_TIME 30e6
+
+#define DHT_PIN 2
+#define PHOTORESISTOR_PIN A0

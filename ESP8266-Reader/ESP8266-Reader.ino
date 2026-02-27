@@ -15,7 +15,21 @@ void upload() {
 }
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
+  Serial.println("ESP8266 start");
+
+  Serial.println("ESP8266 connecting to network");
+  connectToNetwork();
+
+  Serial.println("ESP8266 reading from sensors");
+  performRead();
+
+  Serial.println("ESP8266 uploading data");
+  upload();
+
+  Serial.println("ESP8266 entering deep sleep");
+  enterDeepsleep();
+
 
 }
 

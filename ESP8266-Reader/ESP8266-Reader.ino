@@ -1,4 +1,5 @@
 #include "config.h"
+#include <ESP8266WiFi.h>
 
 void enterDeepsleep() {
   ESP.deepSleep(DEEPSLEEP_TIME);
@@ -10,6 +11,13 @@ void performRead() {
 
 void connectToNetwork() {
 
+  WiFi.begin(STASSID, STAPSK);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
+  Serial.print("Connected! IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void upload() {

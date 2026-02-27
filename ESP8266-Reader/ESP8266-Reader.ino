@@ -1,5 +1,8 @@
 #include "config.h"
 #include <ESP8266WiFi.h>
+#include <ArduinoJson.h>
+
+JsonDocument doc;
 
 void enterDeepsleep() {
   ESP.deepSleep(DEEPSLEEP_TIME);

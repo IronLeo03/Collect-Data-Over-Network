@@ -47,8 +47,9 @@ Hardware Deployment:
 	3. Install "ESP8266" from "ESP8266 Community" from the Arduino IDE board manager
 	4. Select "Generic ESP8266 Module" as the board type
 	5. Ensure everything was correctly set up by flashing an example blinking sketch onto the ESP8266
-3. Open the sketch change the constants
-	1. The endpoint constant will be dependent on the remote
+3. Open the sketch, including the config file
+	1. An example config file exists as "config.h.example", copy it without the ".example" suffix and include this one
+	2. Do set up the network SSID and password in the included config
 4. Flash the sketch
 
 Once you have followed the instructions, you should be seeing the tables periodically getting filled with data.

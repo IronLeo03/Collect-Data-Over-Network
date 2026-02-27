@@ -1,0 +1,5 @@
+#pragma once
+
+#define STASSID "SSID"
+#define STAPSK "password"
+#define DEEPSLEEP_TIME 30e6

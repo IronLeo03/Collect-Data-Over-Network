@@ -2,6 +2,7 @@
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
 #include <DHT11.h>
+#include <ESP8266HTTPClient.h>
 
 JsonDocument doc;
 
@@ -33,7 +34,36 @@ void connectToNetwork() {
 }
 
 void upload() {
-  
+  char output[UPLOAD_ARRAY_MAX_LENGTH];
+  serializeJson(doc, output);
+
+  if ((WiFi.status() == WL_CONNECTED)) {
+
+    WiFiClientSecure client;
+    client.setInsecure(); // Do not check certificate
+    HTTPClient http;
+
+    http.begin(client, ENDPOINT);
+    http.addHeader("Content-Type", "application/json");
+
+    int httpCode = http.POST(output);
+
+    // httpCode will be negative on error
+    if (httpCode > 0) {
+      // HTTP header has been send and Server response header has been handled
+      Serial.printf("[HTTP] POST... code: %d\n", httpCode);
+
+      // file found at server
+      if (httpCode == HTTP_CODE_OK) {
+        const String& payload = http.getString();
+        Serial.printf("received payload: %s\n",payload);
+      }
+    } else {
+      Serial.printf("[HTTP] POST... failed, error: %s\n", http.errorToString(httpCode).c_str());
+    }
+
+    http.end();
+  }
 }
 
 void setup() {

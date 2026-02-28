@@ -3,6 +3,7 @@
 #define STASSID "SSID"
 #define STAPSK "password"
 #define ENDPOINT "endpoint_url"
+#define UPLOAD_ARRAY_MAX_LENGTH 256
 
 #define DEEPSLEEP_TIME 30e6
 

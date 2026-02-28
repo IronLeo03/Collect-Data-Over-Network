@@ -1,6 +1,7 @@
 #include "config.h"
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
+#include <DHT11.h>
 
 JsonDocument doc;
 
@@ -11,6 +12,13 @@ void enterDeepsleep() {
 void performRead() {
   int light = analogRead(PHOTORESISTOR_PIN);
   doc["light"] = light;
+
+  DHT11 dht11(DHT_PIN);
+  int temperature = 0;
+  int humidity = 0;
+  int result = dht11.readTemperatureHumidity(temperature, humidity);
+  doc["temperature"] = temperature;
+  doc["humidity"] = humidity;
 }
 
 void connectToNetwork() {

@@ -51,7 +51,7 @@ Hardware Deployment:
 	1. An example config file exists as "config.h.example", copy it without the ".example" suffix and include this one
 	2. Do set up the network SSID and password in the included config
 4. Make sure all libraries are installed correctly from the Arduino IDE's library manager
-	1. Install ArduinoJson
+	1. Install ArduinoJson and DHT11 (from "dhrubasaha08")
 5. Flash the sketch
 
 Once you have followed the instructions, you should be seeing the tables periodically getting filled with data.

@@ -38,7 +38,8 @@ Remote deployment:
 3. Enter the Edge Functions section and create the necessary functions
 	1. Firstly create the function to log the data, name it `log_measurement`, the code for it can be found in the source code at `Supabase/log_measurement.ts`; after creation, the endpoint URL for this function will be provided
 	2. For the sake of testing, a curl command to enter dummy data can be found at `Supabase/curl_for_testing.sh`, just replace the URL
-	3. Make sure to disable "Verify JWT with legacy secret" for every function
+	3. Create the function to generate a report of the data, name it `generate_report`, the code for it can be found in the source code at `Supabase/generate_report.ts`
+	4. Make sure to disable "Verify JWT with legacy secret" for every function
 4. Make sure to take note of the functions URLs
 
 Hardware Deployment:

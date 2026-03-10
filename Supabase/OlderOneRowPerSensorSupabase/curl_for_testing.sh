@@ -1,3 +1,3 @@
-curl -L -X POST 'https://oqadczpgddnpdohwqqci.supabase.co/functions/v1/log_data' \
+curl -L -X POST 'ENDPOINT_URL' \
   -H 'Content-Type: application/json' \
   --data '{"testing": 2}'

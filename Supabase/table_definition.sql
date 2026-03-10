@@ -5,4 +5,4 @@ create table public.measurements (
   constraint measurements_pkey primary key (id)
 ) TABLESPACE pg_default;
 
-ALTER TABLE public."data" ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public."measurements" ENABLE ROW LEVEL SECURITY;

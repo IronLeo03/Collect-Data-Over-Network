@@ -1,3 +1,3 @@
-curl -L -X POST 'https://oqadczpgddnpdohwqqci.supabase.co/functions/v1/insert_measurement' \
+curl -L -X POST 'ENDPOINT_URL' \
   -H 'Content-Type: application/json' \
   --data '{"testing": 2, "more_data":5}'
